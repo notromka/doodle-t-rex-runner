@@ -14,7 +14,7 @@ test('standalone distribution is complete and contains no portfolio backend depe
     }
     const source = ['index.html', 'runner.css', 'runner-engine.js', 'runner.js', 'README.md'].map(read).join('\n');
     assert.doesNotMatch(source, /\/api\/runner|MYSQL_|RUNNER_HMAC|DISCORD_WEBHOOK|server\.js/);
-    assert.doesNotMatch(source, /172\.30\.|r_romka_cc|Wtgf/i);
+    assert.doesNotMatch(source, /MYSQL_PASSWORD|DATABASE_URL|discord\.com\/api\/webhooks\/\d+/i);
     assert.match(read('index.html'), /runner-engine\.js/);
     assert.match(read('index.html'), /runner\.js/);
     assert.match(read('runner.js'), /localStorage/);
