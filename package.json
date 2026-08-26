@@ -1,0 +1,10 @@
+{
+  "name": "doodle-t-rex-runner",
+  "version": "1.0.0",
+  "private": false,
+  "description": "A hand-drawn, browser-only endless runner by Romka.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test"
+  }
+}

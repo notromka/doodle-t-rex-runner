@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doodle T-Rex Runner</title>
+  <meta name="description" content="A tiny hand-drawn endless runner: jump the ground junk and slide under flying bugs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="runner.css">
+</head>
+<body>
+  <main>
+    <header>
+      <span>OPEN SOURCE DOODLE // BUILD 1.0</span>
+      <h1>Doodle<br><em>T-Rex Runner</em></h1>
+      <p>tiny dinosaur vs. bugs, coffee and one more broken deploy.</p>
+    </header>
+
+    <section class="game-card" id="game" data-state="idle" data-player-state="ready" aria-labelledby="game-title">
+      <div class="toolbar">
+        <div><small>t-rex-runner.exe</small><h2 id="game-title">survive the deploy</h2></div>
+        <div class="scores"><span>SCORE <strong id="score">00000</strong></span><span>BEST <strong id="best">00000</strong></span></div>
+      </div>
+      <div class="stage">
+        <canvas id="canvas" width="960" height="360" tabindex="0" aria-label="Doodle endless runner game"></canvas>
+        <div class="overlay" id="overlay">
+          <img src="assets/mascot-romka.png" width="512" height="512" alt="" aria-hidden="true">
+          <p id="overlay-title">ready to make questionable decisions?</p>
+          <button id="start" type="button">start running →</button>
+          <button id="restart" type="button" hidden>run it back ↻</button>
+        </div>
+      </div>
+      <div class="controls">
+        <p><kbd>SPACE</kbd>/<kbd>↑</kbd> jump · <kbd>SHIFT</kbd>/<kbd>↓</kbd> slide · <kbd>P</kbd> pause</p>
+        <div><button id="pause" type="button">pause</button><button id="sound" type="button" aria-pressed="false">sound: off</button></div>
+        <div class="touch"><button id="duck" type="button">↓ slide</button><button id="jump" type="button">↑ jump</button></div>
+      </div>
+      <p class="status" id="status" aria-live="polite">Game ready.</p>
+    </section>
+
+    <aside><strong>LOCAL ONLY</strong><p>No account and no server. Your best score stays in this browser.</p></aside>
+  </main>
+  <footer>made by <a href="https://romka.cc/lab/t-rex-runner/">romka.cc</a> · MIT licensed</footer>
+  <script src="runner-engine.js"></script>
+  <script src="runner.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+:root { --ink:#111214; --paper:#f4f0e5; --white:#fbf8ef; --yellow:#ffd21f; --purple:#6f35bb; --cyan:#65d9ef; --pink:#ff9c8f; }
+* { box-sizing: border-box; }
+html { min-height: 100%; background: var(--paper); }
+body { margin: 0; color: var(--ink); background-color: var(--paper); background-image: linear-gradient(rgba(30,50,55,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(30,50,55,.055) 1px,transparent 1px); background-size: 32px 32px; font-family: Kalam,cursive; }
+main { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 70px 0 45px; }
+header { margin: 0 0 30px 7%; transform: rotate(-.5deg); }
+header span { display: inline-block; padding: 7px 10px; border: 2px solid var(--ink); background: var(--yellow); box-shadow: 4px 4px 0 var(--ink); font: 700 .62rem "Space Mono",monospace; }
+h1 { margin: 12px 0 10px; font-size: clamp(3.5rem,9vw,7rem); line-height: .78; letter-spacing: -.04em; }
+h1 em { color: var(--purple); font-style: normal; }
+header p { font-size: 1.05rem; }
+.game-card { position: relative; border: 3px solid var(--ink); background: var(--white); box-shadow: 9px 9px 0 var(--ink); }
+.game-card::before { content:"PLAYABLE BUILD"; position:absolute; z-index:3; top:-25px; right:22%; padding:5px 9px; border:2px solid var(--ink); background:var(--cyan); font:700 .55rem "Space Mono",monospace; transform:rotate(2deg); }
+.toolbar { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:17px 21px; border-bottom:2px dashed var(--ink); }
+.toolbar small,.scores { font:700 .62rem "Space Mono",monospace; }
+.toolbar h2 { margin:4px 0 0; font-size:1.25rem; }
+.scores { display:flex; gap:18px; }
+.scores strong { color:var(--purple); font-size:.8rem; }
+.stage { position:relative; overflow:hidden; }
+canvas { display:block; width:100%; height:auto; aspect-ratio:8/3; outline:0; background:var(--white); touch-action:manipulation; }
+canvas:focus-visible { box-shadow:inset 0 0 0 4px var(--purple); }
+.overlay { position:absolute; inset:0; display:grid; place-content:center; justify-items:center; background:rgba(251,248,239,.91); text-align:center; }
+.overlay[hidden] { display:none; }
+.overlay img { width:76px; height:76px; object-fit:contain; }
+.overlay p { margin:8px 0; font-weight:700; }
+button { padding:9px 12px; border:2px solid var(--ink); border-radius:0; background:var(--yellow); color:var(--ink); box-shadow:4px 4px 0 var(--ink); font:700 .68rem "Space Mono",monospace; cursor:pointer; }
+button:hover { transform:translate(-2px,-2px); box-shadow:6px 6px 0 var(--ink); }
+button:active { transform:translate(2px,2px); box-shadow:1px 1px 0 var(--ink); }
+button:disabled { opacity:.45; cursor:not-allowed; transform:none; }
+.controls { display:grid; grid-template-columns:1fr auto; align-items:center; gap:14px; padding:15px 21px; border-top:2px dashed var(--ink); }
+.controls p,.status { margin:0; font:500 .61rem/1.5 "Space Mono",monospace; }
+.controls>div { display:flex; gap:9px; }
+.controls button { background:#fff; box-shadow:3px 3px 0 var(--ink); }
+.controls .touch { display:none; grid-column:1/-1; }
+.status { padding:0 21px 15px; }
+aside { width:min(390px,90%); margin:38px 7% 0 auto; padding:16px 20px; background:#fff0a6; box-shadow:5px 5px 0 var(--ink); transform:rotate(2deg); }
+aside strong { font:700 .6rem "Space Mono",monospace; }
+aside p { margin:5px 0 0; }
+footer { width:min(1120px,calc(100% - 32px)); margin:0 auto 35px; padding-top:25px; border-top:2px dashed rgba(17,18,20,.4); font:500 .6rem "Space Mono",monospace; }
+footer a { color:var(--purple); }
+@media (max-width:700px) { main{padding-top:40px} header{margin-left:0} h1{font-size:clamp(3rem,17vw,5rem)} .toolbar{align-items:flex-start;padding-inline:13px}.scores{display:grid;gap:3px;text-align:right}.overlay img{width:52px;height:52px}.controls{grid-template-columns:1fr;padding-inline:13px}.controls .touch{display:flex}.touch button{flex:1;min-height:50px}.status{padding-inline:13px}.game-card::before{right:8px} }
+@media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
